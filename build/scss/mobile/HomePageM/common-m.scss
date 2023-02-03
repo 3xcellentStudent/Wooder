@@ -1,0 +1,149 @@
+@media screen and (min-height: 800px) and (min-width: 1440px) {
+   .present-container {
+      .present-part {h2 {font-size: calc(3.8 * $index);}}
+   }
+}
+@media screen and (min-height: 800px) and (max-width: 1440px) {
+   header {
+      .navig {
+         menu {
+            li {
+               .header.lines-btn {
+                  font-size: calc($index * 1);
+               }
+            }
+         }
+      }
+   }
+   .present-container {
+      .present-part {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         h2 {
+            font-size: calc(3.5 * $index);
+            letter-spacing: calc(-1.3 * (1vw + 1vh));
+         }
+         &:last-child {
+            h2 {left: 45%;}
+         }
+      }
+   }
+}
+@media screen and (min-height: 800px) and (max-width: 1024px) {
+   .present-container {
+      flex-flow: column;
+      .present-part {
+         height: 20vh;
+         overflow: visible;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         h2 {
+            font-size: calc(3 * $index);
+            letter-spacing: calc(-1.3 * (1vw + 1vh));
+         }
+         &:last-child {
+            h2 {
+               left: 50%;
+            }
+         }
+         .desc-scroll-wrap {
+            top: 160%;
+            @keyframes desc-scroll-1 {
+               0%{top: 160%;}
+               15%{top: 180%;}
+               30%{top: 160%;}
+               45%{top: 180%;}
+               60%{top: 160%;}
+               75%{top: 180%;}
+               90%{
+                  top: 160%;
+                  opacity: 1;
+               }
+               100%{display: none;opacity: 0;}
+            }
+         }
+      }
+   }
+}
+@media screen and (max-width: 1280px) {
+   header {
+      grid-template: 1fr / 1fr 6fr 0fr;
+      .navig {
+         menu {
+            li {
+               .header.lines-btn {
+                  font-size: calc($index * 1);
+               }
+            }
+         }
+      }
+   }
+   .present-container {
+      flex-flow: column;
+      .present-part {
+         &:last-child {
+            h2 {left: 50%;}
+         }
+         .desc-scroll-wrap {
+            top: 30%;
+            left: 15%;
+            @keyframes desc-scroll-1 {
+               0%{top: 30%;}
+               15%{top: 40%;}
+               30%{top: 30%;}
+               45%{top: 40%;}
+               60%{top: 30%;}
+               75%{top: 40%;}
+               90%{
+                  top: 30%;
+                  opacity: 1;
+               }
+               100%{display: none;opacity: 0;}
+            }
+         }
+      }
+   }
+}
+@media screen and (max-width: 1024px) {
+   header { 
+      height: calc($index * 5);
+      .navig { menu {
+      margin: 0 0 0 calc($index * 2);
+      li { .header.lines-btn {font-size: calc($index * 1.1);}}
+      }}
+   }
+   .present-container {
+      .present-part {
+         h2 {
+            font-size: calc(3.1 * $index);
+            display: block;
+            filter: none;
+         }
+         // &:last-child {h2 {left: 42.5%;}}
+         img {display: none;}
+         .desc-scroll-wrap {
+            span {
+               font-size: calc($index);
+               top: calc(100% + $index);
+            }
+            .mouse-svg {
+               width: calc($index * 3);
+               height: calc($index * 3);
+            }
+         }
+      }
+      &::before {
+         content: '';
+         display: block;
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         background-image: url('../../../../images/photo-home-in-forest.jpg');
+         background-position: 50% 50%;
+         filter: $flt-contrast-dark;
+      }
+   }
+   .end-line {display: none;}
+}

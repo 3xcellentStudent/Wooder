@@ -1,0 +1,76 @@
+.about-wrap {
+   padding: calc($index * 3);
+   touch-action: none;
+   .about-container {
+      position: relative;
+      min-height: calc($index * 20);
+      @extend %d-f-c;
+      .about-slider {
+         overflow: hidden;
+         position: relative;
+         @extend %d-f-c;
+         .item {
+            position: relative;
+            border-radius: calc($index * 2);
+            margin: 0 calc($index * 5);
+            width: calc($index * 40);
+            min-height: calc($index * 20);
+            @extend %d-f-sb;
+            overflow: hidden;
+            .about-box-img {
+               width: 50%;
+               height: 100%;
+               position: relative;
+               pointer-events: none;
+               img {
+                  @extend %img;
+                  width: 100%;
+                  height: 100%;
+               }
+            }
+            .about-info {
+               width: 50%;
+               height: 100%;
+               @extend %d-f-c;
+               flex-flow: column;
+               position: relative;
+               p, h3 {position: relative;z-index: 1;}
+               padding: calc($index * 2);
+               h3 {font-size: calc($index * 1.15);}
+               p {margin: calc($index * 2) 0 0 calc($index / 2);}
+               img {
+                  @extend %img;
+                  top: 0;
+                  left: 0;
+                  z-index: 0;
+                  filter: brightness(.2);
+                  pointer-events: none;
+               }
+            }
+         }
+         .btn-prev-SlIdEr-JS, .btn-next-SlIdEr-JS {
+            width: calc($index * 1.3);
+            height: calc($index * 1.5);
+            position: absolute;
+            cursor: pointer;
+            background: transparent;
+            &::before {
+               background: $clr-3;
+               @extend %pseudo;
+               pointer-events: none;
+               width: 100%;
+               height: 100%;
+               top: 0;
+               left: 0;
+               clip-path: polygon(40% 0, 100% 50%, 40% 100%, 15% 100%, 75% 50%, 15% 0);
+            }
+            &:hover {&::before {background: #fff;}}
+         }
+         .btn-prev-SlIdEr-JS {
+            left: 0;
+            transform: rotate(180deg);
+         }
+         .btn-next-SlIdEr-JS {right: 0;}
+      }
+   }
+}
