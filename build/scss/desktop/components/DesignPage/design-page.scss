@@ -1,0 +1,108 @@
+.ds3d-main-wrap {
+   @extend %d-f-sb;
+   justify-content: flex-end;
+   .desc-scroll-wrap {
+      left: 7%;
+      bottom: 40%;
+      animation: desc-scroll-2 4.5s ease .5s forwards;
+      @keyframes desc-scroll-2 {
+         0%{bottom: 40%;}
+         15%{bottom: 45%;}
+         30%{bottom: 40%;}
+         45%{bottom: 45%;}
+         60%{bottom: 40%;}
+         75%{bottom: 45%;}
+         90%{
+            bottom: 40%;
+            opacity: 1;
+         }
+         100%{display: none;opacity: 0;}
+      }
+      .mouse-svg {
+         right: calc(($index * 1.2) + 70%);
+         top: calc(100% + $index * 6);
+      }
+   }
+}
+.ds3d-wrapper {
+   width: 100%;
+   height: 100vh;
+   background: #111;
+   color: #fff;
+}
+.ds3d-container {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   perspective: 750px;
+   touch-action: none;
+}
+.ds3d-frames-wrap {
+   transform-style: preserve-3d;
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   @extend %d-f-c;
+}
+.frame {
+   padding: calc($index * 3) $index;
+   will-change: transform;
+   position: absolute;
+   transition: .5s ease-out;
+   opacity: .4;
+   width: calc($index * 24);
+   height: calc($index * 16);
+   img {
+      @extend %img;
+      top: 0;
+      cursor: pointer;
+      transition: .3s;
+   }
+   .frame-img.left {
+      left: 0;
+      &.active {
+         transform: scale(2);
+         left: 50%;
+      }
+   }
+   .frame-img.right{
+      right: 0;
+      &.active {
+         transform: scale(2);
+         right: 55%;
+      }
+   }
+   &.ScrEff {opacity: 1;}
+   &::before {
+      @extend %pseudo;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+   }
+}
+.frame.text {
+   text-align: center;
+   h2 {
+      margin: 0 0 calc($index * 3) 0;
+      font-size: calc($index * 1.5);
+      white-space: nowrap;
+   }
+   p {font-size: $index;}
+   &::before {
+      z-index: -1;
+      background: rgba(#111, .7);
+      @extend %pseudo;
+      width: 100vw;
+      height: 100vh;
+      left: -140%;
+      top: 0;
+   }
+   .ds-scroll-link-wrap {
+      width: calc($index * 10);
+      position: relative;
+      left: calc($index * 6);
+      top: calc($index * 3);
+   }
+}
+.frame.left {right: 51%;}
+.frame.right {left: 51%;}

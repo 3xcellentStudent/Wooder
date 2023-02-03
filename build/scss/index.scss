@@ -1,0 +1,33 @@
+@import './instruments/instruments';
+@import './desktop/desktop';
+@import './mobile/mobile-index';
+
+* {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+   text-decoration: none;
+   border: none;
+   box-sizing: border-box;
+   letter-spacing: 0.1em;
+   font-weight: 400;
+   font-family: 'Roboto', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+   font-family: _Mars;
+   color: #E9983C;
+}
+p, div, span, li, h1, h2, h3, h4, h5, h6 {cursor: default;}
+p {
+   line-height: 1.5;
+   color: #cc8942;
+   font-size: calc($index * .8);
+   font-weight: 400;
+}
+body {
+   overflow: hidden;
+   background: #111;
+}
+// font-family: _Mars;
+// font-family: 'Koulen', cursive;
+// font-family: 'Roboto', sans-serif;

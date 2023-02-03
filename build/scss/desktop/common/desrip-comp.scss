@@ -1,0 +1,33 @@
+.desc-scroll-wrap {
+   position: absolute;
+   width: calc($index * 5);
+   height: calc($index * 5);
+   z-index: 1;
+   span {
+      text-transform: uppercase;
+      position: absolute;
+      transform: rotate(90deg);
+      font-size: calc($index / 1.5);
+      font-weight: 500;
+      right: 50%;
+      top: calc(100% + $index * 2);
+      color: $clr-5;
+      white-space: nowrap;
+      &::before {
+         @extend %pseudo;
+         width: 100%;
+         height: 2px;
+         background: $clr-5;
+         left: 0;
+         bottom: calc(($index / 6) * -1);
+      }
+   }
+   .mouse-svg {
+      position: absolute;
+      width: calc($index * 2);
+      height: calc($index * 2);
+      right: calc($index + 50%);
+      top: calc(100% + $index * 5);
+      fill: $clr-5;
+   }
+}

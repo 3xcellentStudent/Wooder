@@ -1,0 +1,25 @@
+%img {
+   object-fit: cover;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+}
+%d-f-c {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+%d-f-sa {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+%d-f-sb {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+%pseudo {
+   content: '';
+   position: absolute;
+}
