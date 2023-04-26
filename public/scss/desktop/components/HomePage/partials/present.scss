@@ -1,0 +1,68 @@
+.present-container {
+   overflow-x: hidden;
+   box-shadow: 14px 14px 20px #000;
+   position: relative;
+   z-index: 1;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100vh;
+   flex: 1 1 0;
+   touch-action: none;
+
+   .present-part {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: 1s ease-out;
+      overflow: hidden;
+      touch-action: none;
+      
+      .desc-scroll-wrap {
+         animation: desc-scroll-1 4.5s ease .5s forwards;
+         top: 50%;
+         left: 60%;
+         @keyframes desc-scroll-1 {
+            0%{top: 50%;}
+            15%{top: 55%;}
+            30%{top: 50%;}
+            45%{top: 55%;}
+            60%{top: 50%;}
+            75%{top: 55%;}
+            90%{
+               top: 50%;
+               opacity: 1;
+            }
+            100%{display: none;opacity: 0;}
+         }
+      }
+      img {
+         @extend %img;
+         filter: $flt-contrast-dark;
+         z-index: -1;
+         pointer-events: none;
+      }
+      h2 {
+         pointer-events: none;
+         position: absolute;
+         z-index: 1;
+         top: 50%;
+         left: 50%;
+         transform: translate3d(-50%, -50%, 0);
+         font-size: calc(3.8 * $index);
+         text-transform: uppercase;
+         letter-spacing: calc((-1) * $index);
+      }
+      p {
+         font-family: _Mars;
+         font-size: 20px;
+         position: absolute;
+         right: 0;
+      }
+
+      @media screen and (max-width: 900px) {
+         overflow: visible;
+      }
+   }
+}

@@ -1,0 +1,82 @@
+@media screen and (orientation: portrait) {
+   .frame {
+      width: calc($index * 20);
+      height: calc($index * 24);
+      .frame-img.left {
+         &.active {
+            left: 52.5%;
+         }
+      }
+      .frame-img.right{
+         &.active {
+            right: 52.5%;
+         }
+      }
+   }
+   .frame.text {
+      text-align: center;
+      h2 {
+         white-space: pre-wrap;
+      }
+      .ds-scroll-link-wrap {
+         left: 50%;
+         transform: translate3d(-50%, 0, 0);
+      }
+   }
+}
+@media screen and (max-width: 900px){
+   header {width: 100vw;}
+   .ds3d-frames-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   .frame {
+      width: calc($index * 24);
+      height: calc($index * 16);
+
+      .frame-img.left {
+         left: 0;
+         &.active {
+            transform: scale(2);
+            // left: 50%;
+            left: 0;
+         }
+      }
+      .frame-img.right{
+         right: 0;
+         &.active {
+            transform: scale(2);
+            // right: 55%;
+            right: 0;
+         }
+      }
+   }
+   .frame.text {
+      width: min-content;
+      display: flex;
+      flex-direction: column;
+
+      h2 {font-size: calc($index * 2);}
+      p {font-size: calc($index * 1.5);}
+      &::before {
+         top: -50%;
+         left: -50%;
+      }
+
+      .ds-scroll-link-wrap {
+         width: calc($index * 10);
+         top: calc($index * 3);
+      }
+
+      @media screen and (orientation: landscape) {
+         align-items: center;
+      }
+   }
+   .frame.left {right: 30%;}
+   .frame.right {left: 30%;}
+}
+@media screen and (max-width: 900px) and (orientation: portrait) {
+   .frame.left {right: 20%;}
+   .frame.right {left: 20%;}
+}
